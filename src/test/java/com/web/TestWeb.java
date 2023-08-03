@@ -9,13 +9,15 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class TestWeb {
 	@Test
 	public void demo() {
+        
         // declaration and instantiation of objects/variables
 			
 		///comment the above 2 lines and uncomment below 2 lines to use Chrome
-		//System.setProperty("webdriver.chrome.driver","C:\\Users\\Rama Lakhshmi\\chrome\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","/usr/bin/google-chrome");
 		//WebDriver driver = new ChromeDriver();
 		ChromeOptions chromeOptions = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
+		chromeOptions.addArguments("headless");
+		//WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver(chromeOptions);
 
         String baseUrl = "http://demo.guru99.com/test/newtours/";
@@ -25,5 +27,6 @@ public class TestWeb {
         // launch Fire fox and direct it to the Base URL
         driver.get(baseUrl);
         driver.quit();
+	
 	}
 }
