@@ -16,7 +16,7 @@ public class TestWeb {
 		System.setProperty("webdriver.chrome.driver","/usr/bin/google-chrome");
 		//WebDriver driver = new ChromeDriver();
 		ChromeOptions chromeOptions = new ChromeOptions();
-		//chromeOptions.addArguments("headless");
+		chromeOptions.addArguments("--headless");
 		//WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver(chromeOptions);
 
